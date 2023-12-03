@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { AgGridReact } from "ag-grid-react";
-import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-material.css";
 
@@ -21,7 +19,7 @@ const [editModalIsOpen, setEditModalIsOpen] = useState(false);
 const [trainingModalIsOpen, setTrainingModalIsOpen] = useState(false);
 const [selectedCustomer, setSelectedCustomer] = useState(null);
 
-
+    //Määrittelee sarakkeet listalle
   const columns = [
     { headerName: "Etunimi", field: "firstname", sortable: true, filter: true },
     { headerName: "Sukunimi", field: "lastname", sortable: true, filter: true },
@@ -64,6 +62,7 @@ const [selectedCustomer, setSelectedCustomer] = useState(null);
     
   ];
 
+  //Uuden asiakkaan lisäys
   const addCustomer = (customer) => {
     fetch('http://traineeapp.azurewebsites.net/api/customers', {
       method: 'POST',
@@ -100,7 +99,6 @@ const [selectedCustomer, setSelectedCustomer] = useState(null);
   };
   
   
-
   useEffect(() => {
     fetch('http://traineeapp.azurewebsites.net/api/customers')
       .then(response => response.json())
