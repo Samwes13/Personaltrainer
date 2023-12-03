@@ -6,7 +6,7 @@ const Navigation = () => {
     <nav>
       <ul>
         <li>
-          <Link to="/">Asiakkaat</Link>
+          <Link to="/personaltrainer">Asiakkaat</Link>
         </li>
         <li>
           <Link to="/trainings">Harjoitukset</Link>
